@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+<title>Low Cost</title>
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet"> 
+<link rel="stylesheet" href="assets/css/font-awesome.css">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/bootstrap-select.css">
+<link rel="stylesheet" href="assets/css/datepicker.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.css">
+<link rel="stylesheet" href="assets/css/style.css">
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+  <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-select.js"></script>
+<script src="assets/js/bootstrap-datepicker.js"></script>
+<script src="assets/js/owl.carousel.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap-tabcollapse.js"></script>
+<script>
+
+
+$(function(){
+    $('.selectpicker').selectpicker();
+});
+
+$('#Tab-mid1').tabCollapse();
+$('#Tab-mid2').tabCollapse();
+
+
+$(document).ready(function() {
+	$('.datepicker').datepicker();
+
+$("header .headr-right .navbar .navbar-nav li .dropdown-menu").hover(
+	  function(){
+	   $(this).parent().addClass("hover-color");
+	  },
+	  function(){
+	    $(this).parent().removeClass("hover-color");
+	  }
+);
+
+
+$(function() {
+  $(".expand").on( "click", function() {
+    $(this).next().slideToggle(200);
+    $(this).find('.right-arrow').toggleClass("right-arrow22");
+    //$expand = $(this).find(">:first-child");
+    
+   /* if($(".expand").hasClass("right-arrow") {
+      $(".expand").removeClass("right-arrow");
+    } else {
+      $(".expand").addClass("right-arrow2");
+    })*/
+  });
+});
+
+	$('.in-tab-text').hide();
+    $('.in-tab').click(function () {
+        // .parent() selects the A tag, .next() selects the P tag
+        $(this).parent().prev().slideToggle(200);
+        $(this).toggleClass("in-tab2");
+    });
+    $('.in-tab-text').slideUp(200);
+
+
+
+
+});
+
+	
+</script>
+</body>
+</html>
