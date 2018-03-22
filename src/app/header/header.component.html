@@ -9,10 +9,13 @@
               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 headr-right">
                 <div class="right-toparea">
                   <select id="" class="selectpicker">
-                      <option>€ EUR</option>
+                      <option *ngFor="let currencies of currency">{{currencies}}</option>
                   </select>
                   <select class="selectpicker">
-          <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+          <option data-content='<span class="flag-icon flag-icon-us"></span> English' 
+                  *ngFor="let countries of country">
+                  {{countries}}
+          </option>
           <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
         </select>
         
