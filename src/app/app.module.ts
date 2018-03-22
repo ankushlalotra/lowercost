@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GetLocationService } from './get-location.service';
+import { FormsModule }   from '@angular/forms';
+
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { GetLocationService } from './get-location.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [GetLocationService],
   bootstrap: [AppComponent]

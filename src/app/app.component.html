@@ -5,14 +5,14 @@
     
       <div class="flight-blok">
         <label>Flying From</label>
-            <select id="" class="selectpicker">
-            <option>Boston (BOS)</option>
+            <select id="" class="selectpicker" #f (change)="fromData(f.value)">
+            <option *ngFor="let city of cities" [value]="city.PlaceId">{{city.PlaceId}}</option>
         </select>
       </div>
       <div class="flight-blok">
         <label>To</label>
-            <select id="" class="selectpicker">
-            <option>Paris (PAR)</option>
+            <select id="" class="selectpicker" #t (change)="toData(t.value)">
+            <option *ngFor="let city of cities" [value]="city.PlaceId">{{city.PlaceId}}</option>
         </select>
       </div>
       <div class="flight-blok1">
