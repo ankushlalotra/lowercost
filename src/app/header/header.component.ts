@@ -13,13 +13,13 @@ export class HeaderComponent implements OnInit {
   public dataApi: any = {};
   public country: any = [];
   public currency: any = [];  
-public selected_country = " ";
-public selected_currency = " ";
+public selected_country ;
+public selected_currency ;
 
 
   ngOnInit() {
   this.getData();
-  
+	
   }
 
   getData() {
@@ -44,7 +44,7 @@ return this.dataApi;
 				temp2.push(temp[j])
 				for(var k=0; k < temp[j].length; k++){
 					// console.log("tempj", temp[j][k]);
-					this.country.push(temp[j][k].Name);
+					this.country.push(temp[j][k].Id);
 					this.currency.push(temp[j][k].CurrencyId)
 				}
 			}
@@ -54,10 +54,26 @@ return this.dataApi;
 	}
 
 }
-ngOnChanges(){
-	console.log(this.selected_currency);
-	console.log(this.selected_country);
+countryData(value){
+	
+	this.selected_country = value;
+console.log(this.selected_country)
+this.getLocation.getData1(this.selected_currency,this.selected_country).subscribe((data) => {
+  		if(data){
+			  console.log(data)
+			
+  		}
+  	})  
 	
 }
+
+currencyData(value){
+	
+	this.selected_currency = value;
+
+	console.log(this.selected_currency)
+}
+
+
 
 }

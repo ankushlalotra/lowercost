@@ -8,12 +8,12 @@
               
               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 headr-right">
                 <div class="right-toparea">
-                  <select id="" class="selectpicker" [(ngModel)]="selected_currency">
-                      <option *ngFor="let currencies of currency">{{currencies}}</option>
+               <select id="" class="selectpicker" #t (change)="currencyData(t.value)" >
+                      <option *ngFor="let currencies of currency" [value]="currencies">{{currencies}}</option>
                   </select>
-                  <select class="selectpicker" [(ngModel)]="selected_country">
+                  <select class="selectpicker" #c (change)="countryData(c.value)">
           <option data-content='<span class="flag-icon flag-icon-us"></span> English' 
-                  *ngFor="let countries of country">
+                  *ngFor="let countries of country" [value]="countries">
                   {{countries}}
           </option>
           <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
@@ -47,13 +47,11 @@
                     <li><a href="#">Offers And Deals</a></li>
                     <li><a href="#">Destination</a></li>
                   </ul>
-                </li>
-                            
+                </li>                
               </ul>
             </div>
             <!-- /.navbar-collapse -->
-          </nav>
-                  
+          </nav>      
               </div>
           </div>
     </div>
