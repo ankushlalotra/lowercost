@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output,EventEmitter} from '@angular/core';
 import {GetLocationService} from '../get-location.service'
 
 @Component({
@@ -13,9 +13,10 @@ export class HeaderComponent implements OnInit {
   public dataApi: any = {};
   public country: any = [];
   public currency: any = [];  
-public selected_country ;
-public selected_currency ;
+  public selected_country ;
+  public selected_currency ;
 
+  @Output() public places = new EventEmitter();
 
   ngOnInit() {
   this.getData();
@@ -61,7 +62,7 @@ console.log(this.selected_country)
 this.getLocation.getData1(this.selected_currency,this.selected_country).subscribe((data) => {
   		if(data){
 			  console.log(data)
-			
+			this.places.emit(data.Places);
   		}
   	})  
 	

@@ -4,21 +4,17 @@
           <div class="row">
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 logo-main">
                   <a href="#"><img src="images/logo.png" alt=""></a>
-              </div>
-              
+              </div>           
               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 headr-right">
                 <div class="right-toparea">
-               <select id="" class="selectpicker" #t (change)="currencyData(t.value)" >
-                      <option *ngFor="let currencies of currency" [value]="currencies">{{currencies}}</option>
-                  </select>
-                  <select class="selectpicker" #c (change)="countryData(c.value)">
-          <option data-content='<span class="flag-icon flag-icon-us"></span> English' 
-                  *ngFor="let countries of country" [value]="countries">
-                  {{countries}}
-          </option>
-          <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
-        </select>
-        
+               <select   class="my-select" #t (change)="currencyData(t.value)">
+                   <option [disabled]="true">Currency</option>
+                   <option *ngFor="let currencies of currency">{{currencies}}</option>
+               </select>
+               <select  class="my-select" #c (change)="countryData(c.value)">
+                 <option [disabled]="true">Country-Id</option>
+                 <option *ngFor="let countries of country">{{countries}}</option>
+               </select>  
         <a href="#" class="account-btn">Account</a>
         <a href="#" class="organize-btn">Organizer</a>
                 </div>

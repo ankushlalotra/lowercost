@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+select.my-select {
+    padding: 10px 3px;
+    color: #888484;
+    border-color: #eae0e0de;
+    min-width: 120px;
+    max-width: 120px;
+}
